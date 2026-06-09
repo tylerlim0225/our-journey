@@ -7,14 +7,56 @@ body {
   height: 100%;
 }
 
-body {
-  background: #FAF7F0;
-  color: #1F1F1F;
-  font-family: Pretendard, system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Leaflet 마커 z-index — sticky nav 아래로 */
+body {
+  background: #0E0B08;
+  color: #F4EEE3;
+  font-family: Pretendard, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #C4A661;
+  color: #0E0B08;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(247, 243, 238, 0.06);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(247, 243, 238, 0.1);
+  }
+  .glass-cream {
+    background: rgba(250, 245, 236, 0.85);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(14, 11, 8, 0.06);
+  }
+  .ink-grain {
+    background-image:
+      radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scroll-snap-y {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* Leaflet */
+.leaflet-container {
+  background: #14110d;
+  font-family: Pretendard, system-ui, sans-serif;
+}
 .leaflet-pane,
 .leaflet-control {
   z-index: 1 !important;
@@ -22,4 +64,74 @@ body {
 .leaflet-top,
 .leaflet-bottom {
   z-index: 2 !important;
+}
+.leaflet-control-attribution {
+  background: rgba(14, 11, 8, 0.65) !important;
+  color: rgba(244, 238, 227, 0.6) !important;
+  font-size: 9px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px 0 0 0 !important;
+}
+.leaflet-control-attribution a {
+  color: rgba(244, 238, 227, 0.7) !important;
+}
+/* Cinematic, slightly desaturated map tiles */
+.leaflet-tile-pane {
+  filter: grayscale(35%) brightness(0.92) saturate(0.88) contrast(1.05);
+}
+
+/* Custom pin styling */
+.atlas-pin {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.atlas-pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #F2E7C9;
+  border: 2px solid #0E0B08;
+  box-shadow: 0 4px 14px rgba(196, 166, 97, 0.4);
+  position: relative;
+  z-index: 2;
+}
+.atlas-pin-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(196, 166, 97, 0.55);
+  animation: atlasRing 2.6s ease-out infinite;
+  z-index: 1;
+}
+.atlas-pin-favorite .atlas-pin-dot {
+  background: #C4A661;
+  box-shadow: 0 0 0 4px rgba(196, 166, 97, 0.18), 0 6px 16px rgba(196, 166, 97, 0.5);
+}
+.atlas-pin-planned .atlas-pin-dot {
+  background: transparent;
+  border-color: #C4A661;
+}
+.atlas-pin-secret .atlas-pin-dot {
+  background: #5C2A2A;
+  border-color: #C4A661;
+}
+.atlas-pin-selected .atlas-pin-dot {
+  transform: scale(1.6);
+  background: #C4A661;
+  box-shadow: 0 0 0 6px rgba(196, 166, 97, 0.25), 0 8px 22px rgba(196, 166, 97, 0.55);
+}
+@keyframes atlasRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* Hide default Leaflet zoom controls polish */
+.leaflet-control-zoom a {
+  background: rgba(14, 11, 8, 0.85) !important;
+  color: #F4EEE3 !important;
+  border: 1px solid rgba(196, 166, 97, 0.3) !important;
+}
+.leaflet-control-zoom a:hover {
+  background: rgba(196, 166, 97, 0.18) !important;
 }
