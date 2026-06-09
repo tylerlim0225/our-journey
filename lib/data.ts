@@ -36,14 +36,14 @@ export interface VaultEntry {
 // ── Trips ──────────────────────────────────────────────────────
 export const trips: Trip[] = [
   {
-    id: 'jeju-2026-07',
-    title: '제주도 3박4일',
-    location: '제주특별자치도',
-    lat: 33.4996,
-    lng: 126.5312,
+    id: 'alov-yangju-2026-07',
+    title: 'ALOV 양주 빌라스테이 1박',
+    location: '경기도 양주시 고암길 154-54',
+    lat: 37.78,
+    lng: 127.07,
     date: '2026-07-15',
-    days: 4,
-    highlights: ['함덕 해변', '돈사돈 흑돼지', '카페 그초'],
+    days: 2,
+    highlights: ['빌라 독채', '자연 속 휴식', '회암사 근처'],
     rating: 5,
     status: 'planned',
   },

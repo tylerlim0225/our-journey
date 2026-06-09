@@ -12,9 +12,9 @@ export default function Nav() {
     <header className="border-b border-navy-900/10 bg-cream/90 backdrop-blur sticky top-0 z-50">
       <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="text-sm md:text-base font-bold tracking-wide text-navy-900">
-          OUR JOURNEY
+          태윤<span className="mx-0.5 text-amber-400">💛</span>지은
           <span className="mx-2 text-gold-600">·</span>
-          <span className="text-navy-900/70 font-medium">우리의 여행</span>
+          <span className="text-navy-900/70 font-medium">여행 일지</span>
         </Link>
         <nav className="flex gap-1 md:gap-2 text-sm font-medium text-navy-900">
           {links.map(l => (

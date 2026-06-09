@@ -11,12 +11,12 @@ export default function HomePage() {
       {/* Hero */}
       <section className="text-center animate-fade-in">
         <p className="text-xs tracking-widest2 text-gold-600 uppercase mb-4">
-          OUR JOURNEY TOGETHER · FY 2026
+          TAEYUN 💛 JIEUN · TRAVEL JOURNAL · FY 2026
         </p>
         <h1 className="text-5xl md:text-7xl font-bold text-navy-900 leading-tight">
-          함께 만들어가는
+          태윤<span className="text-amber-400">💛</span>지은
           <br />
-          <span className="text-gold-600">우리의 여행</span>
+          <span className="text-gold-600">여행 일지</span>
         </h1>
         <p className="mt-6 text-navy-900/70 max-w-xl mx-auto leading-relaxed">
           다녀온 곳들의 지도와 자잘한 기록,

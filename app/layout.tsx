@@ -4,8 +4,8 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: '우리의 여행 · Our Journey',
-  description: '함께 만들어가는 추억의 기록',
+  title: '태윤💛지은 여행 일지',
+  description: '태윤이와 지은이가 함께 만들어가는 추억의 기록',
 };
 
 export const viewport: Viewport = {
